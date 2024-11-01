@@ -1,0 +1,383 @@
+file 363386 1730393950                                          
+version 3
+run UDP4-0-20241031-17:59:01-14592
+attr configname UDP4
+attr datetime 20241031-17:59:01
+attr datetimef 20241031-175901
+attr experiment UDP4
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network MixedWLAN
+attr processid 14592
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../../inet4.5/images
+config **.numHostsTCP 0
+config **.numHostsUDP 5
+config network MixedWLAN
+config sim-time-limit 10s
+config **.mac.**.vector-recording false
+config **.mac.**.bin-recording false
+config **.tcp.**.vector-recording false
+config **.tcp.**.bin-recording false
+config **.radio.**.vector-recording false
+config **.radio.**.bin-recording false
+config **.constraintAreaMinX 0m
+config **.constraintAreaMinY 0m
+config **.constraintAreaMinZ 0m
+config **.constraintAreaMaxX 50m
+config **.constraintAreaMaxY 50m
+config **.constraintAreaMaxZ 0m
+config **.ap.wlan[*].address "\"10:00:00:00:00:00\""
+config **.*host*.**.mgmt.accessPointAddress "\"10:00:00:00:00:00\""
+config **.numApps 1
+config **.udphost[0].app[*].typename UdpEchoApp
+config **.udphost[0].app[*].localPort 3088
+config **.udphost[*].app[*].typename UdpBasicApp
+config **.udphost[*].app[*].destAddresses "\"udphost[0]\""
+config **.udphost[*].app[*].messageLength 1500B
+config **.udphost[*].app[*].sendInterval "40ms + uniform(-5ms, 5ms)"
+config **.udphost[*].app[*].destPort 3088
+config **.udphost[*].app[*].startTime 0s
+config **.udphost[*].app[*].stopTime -1s
+config **.tcphost[0].numApps 1
+config **.tcphost[0].app[*].typename TcpGenericServerApp
+config **.tcphost[0].app[0].localPort 1000
+config **.tcphost[0].app[0].active true
+config **.tcphost[*].numApps 1
+config **.tcphost[*].app[*].typename TcpBasicClientApp
+config **.tcphost[*].app[0].active true
+config **.tcphost[*].app[0].connectAddress "\"tcphost[0]\""
+config **.tcphost[*].app[0].connectPort 1000
+config **.tcphost[*].app[0].startTime 0s
+config **.tcphost[*].app[0].stopTime -1s
+config **.tcphost[*].app[0].thinkTime 0s
+config **.tcphost[*].app[0].idleInterval "40ms + uniform(-5ms, 5ms)"
+config **.tcphost[*].app[0].reconnectInterval 0s
+config **.tcphost[*].app[0].numRequestsPerSession 1
+config **.tcphost[*].app[0].requestLength 1500B
+config **.tcphost[*].app[0].replyLength 1500B
+config **.wlan[*].bitrate 433.3Mbps
+config **.wlan[*].mac.dcf.channelAccess.pendingQueue.packetCapacity 40
+config **.wlan[*].mac.dcf.channelAccess.cwMin 20
+config **.bandName "\"5 GHz (20 MHz)\""
+config **.opMode "\"ac\""
+config **.wlan[*].radio.antenna.numAntennas 8
+config **.wlan[*].radio.transmitter.power 10mW
+config **.wlan[*].radio.transmitter.headerLength 192b
+config **.wlan[*].radio.transmitter.centerFrequency 5GHz
+config **.wlan[*].radio.receiver.sensitivity -85dBm
+config **.wlan[*].radio.receiver.snirThreshold 4dB
+
+vector 0 MixedWLAN.udphost[0].udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetSentToUpper
+attr title "packets passed up, count"
+vector 1 MixedWLAN.udphost[0].udp droppedPkWrongPort:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+vector 2 MixedWLAN.udphost[0].udp droppedPkBadChecksum:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+vector 3 MixedWLAN.udphost[1].udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetSentToUpper
+attr title "packets passed up, count"
+vector 4 MixedWLAN.udphost[1].udp droppedPkWrongPort:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+vector 5 MixedWLAN.udphost[1].udp droppedPkBadChecksum:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+vector 6 MixedWLAN.udphost[2].udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetSentToUpper
+attr title "packets passed up, count"
+vector 7 MixedWLAN.udphost[2].udp droppedPkWrongPort:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+vector 8 MixedWLAN.udphost[2].udp droppedPkBadChecksum:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+vector 9 MixedWLAN.udphost[3].udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetSentToUpper
+attr title "packets passed up, count"
+vector 10 MixedWLAN.udphost[3].udp droppedPkWrongPort:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+vector 11 MixedWLAN.udphost[3].udp droppedPkBadChecksum:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+vector 12 MixedWLAN.udphost[4].udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetSentToUpper
+attr title "packets passed up, count"
+vector 13 MixedWLAN.udphost[4].udp droppedPkWrongPort:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+vector 14 MixedWLAN.udphost[4].udp droppedPkBadChecksum:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+vector 15 MixedWLAN.udphost[1].app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets sent, packetBytes"
+vector 16 MixedWLAN.udphost[2].app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets sent, packetBytes"
+vector 17 MixedWLAN.udphost[3].app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets sent, packetBytes"
+vector 18 MixedWLAN.udphost[4].app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets sent, packetBytes"
+vector 19 MixedWLAN.udphost[1].udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets sent, packetBytes"
+vector 20 MixedWLAN.udphost[2].udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets sent, packetBytes"
+vector 21 MixedWLAN.udphost[3].udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets sent, packetBytes"
+vector 22 MixedWLAN.udphost[4].udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets sent, packetBytes"
+vector 23 MixedWLAN.udphost[1].ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr recordingmode vector(packetBytes)
+attr source arpRequestSent
+attr title "ARP request sent, packetBytes"
+vector 24 MixedWLAN.udphost[2].ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr recordingmode vector(packetBytes)
+attr source arpRequestSent
+attr title "ARP request sent, packetBytes"
+vector 25 MixedWLAN.udphost[3].ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr recordingmode vector(packetBytes)
+attr source arpRequestSent
+attr title "ARP request sent, packetBytes"
+vector 26 MixedWLAN.udphost[4].ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr recordingmode vector(packetBytes)
+attr source arpRequestSent
+attr title "ARP request sent, packetBytes"
+vector 27 MixedWLAN.udphost[0].ipv4.arp arpReplySent:vector(packetBytes) ETV
+attr recordingmode vector(packetBytes)
+attr source arpReplySent
+attr title "ARP replies sent, packetBytes"
+vector 28 MixedWLAN.udphost[0].udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 29 MixedWLAN.udphost[0].app[0] echoedPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets echoed, packetBytes"
+vector 30 MixedWLAN.udphost[0].udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets sent, packetBytes"
+vector 31 MixedWLAN.udphost[1].udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 32 MixedWLAN.udphost[1].app[0] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 33 MixedWLAN.udphost[1].app[0] rcvdPkLifetime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source dataAge(packetReceived)
+attr title "received packet lifetime"
+attr unit s
+vector 34 MixedWLAN.udphost[1].app[0] rcvdPkSeqNo:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source appPkSeqNo(packetReceived)
+attr title "received packet sequence number"
+vector 35 MixedWLAN.udphost[2].udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 36 MixedWLAN.udphost[2].app[0] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 37 MixedWLAN.udphost[2].app[0] rcvdPkLifetime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source dataAge(packetReceived)
+attr title "received packet lifetime"
+attr unit s
+vector 38 MixedWLAN.udphost[2].app[0] rcvdPkSeqNo:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source appPkSeqNo(packetReceived)
+attr title "received packet sequence number"
+vector 39 MixedWLAN.udphost[4].udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 40 MixedWLAN.udphost[4].app[0] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 41 MixedWLAN.udphost[4].app[0] rcvdPkLifetime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source dataAge(packetReceived)
+attr title "received packet lifetime"
+attr unit s
+vector 42 MixedWLAN.udphost[4].app[0] rcvdPkSeqNo:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source appPkSeqNo(packetReceived)
+attr title "received packet sequence number"
+vector 43 MixedWLAN.udphost[3].udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 44 MixedWLAN.udphost[3].app[0] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 45 MixedWLAN.udphost[3].app[0] rcvdPkLifetime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source dataAge(packetReceived)
+attr title "received packet lifetime"
+attr unit s
+vector 46 MixedWLAN.udphost[3].app[0] rcvdPkSeqNo:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source appPkSeqNo(packetReceived)
+attr title "received packet sequence number"
+vector 47 MixedWLAN.udphost[4].app[0] throughput:vector ETV
+attr recordingmode vector
+attr source throughput(packetReceived)
+attr title throughput
+attr unit bps
+vector 48 MixedWLAN.udphost[2].app[0] throughput:vector ETV
+attr recordingmode vector
+attr source throughput(packetReceived)
+attr title throughput
+attr unit bps
+vector 49 MixedWLAN.udphost[1].app[0] throughput:vector ETV
+attr recordingmode vector
+attr source throughput(packetReceived)
+attr title throughput
+attr unit bps
+vector 50 MixedWLAN.udphost[3].app[0] throughput:vector ETV
+attr recordingmode vector
+attr source throughput(packetReceived)
+attr title throughput
+attr unit bps
+0	13720 28544 0 389903 0 9.985767939064 1002 0 1001 501501 334835501
+1	42264 9 0 0 0 0 1 0 0 0 0
+2	42273 9 0 0 0 0 1 0 0 0 0
+3	42282 7058 0 390093 0 9.986562076131 251 0 250 31375 5239625
+4	49340 9 0 0 0 0 1 0 0 0 0
+5	49349 9 0 0 0 0 1 0 0 0 0
+6	49358 7057 0 389329 0 9.978632200703 251 0 250 31375 5239625
+7	56415 9 0 0 0 0 1 0 0 0 0
+8	56424 9 0 0 0 0 1 0 0 0 0
+9	56433 7023 0 389720 0 9.984354266154 250 0 249 31125 5177125
+10	63456 10 0 0 0 0 1 0 0 0 0
+11	63466 10 0 0 0 0 1 0 0 0 0
+12	63476 7368 0 388960 0 9.974582081758 253 0 252 31878 5366130
+13	70844 10 0 0 0 0 1 0 0 0 0
+14	70854 10 0 0 0 0 1 0 0 0 0
+15	70864 7645 3 389753 0 9.985038827395 250 1500 1500 375000 562500000
+16	78509 7635 4 388991 0 9.977208076399 250 1500 1500 375000 562500000
+17	86144 7613 5 389364 0 9.982605863022 249 1500 1500 373500 560250000
+18	93757 7690 6 388618 0 9.97321174953 252 1500 1500 378000 567000000
+19	101447 7645 8 389754 0 9.985038827395 250 1508 1508 377000 568516000
+20	109092 7636 10 388992 0 9.977208076399 250 1508 1508 377000 568516000
+21	116728 7614 12 389365 0 9.982605863022 249 1508 1508 375492 566241936
+22	124342 7691 14 388619 0 9.97321174953 252 1508 1508 380016 573064128
+23	132033 12 15 15 0 0 1 28 28 28 784
+24	132045 12 16 16 0 0 1 28 28 28 784
+25	132057 12 17 17 0 0 1 28 28 28 784
+26	132069 12 18 18 0 0 1 28 28 28 784
+27	132081 105 177 1070 0.000774296211 0.004371929587 4 28 28 112 3136
+28	132186 30643 829 389903 0.003497929587 9.985767939064 1001 1508 1508 1509508 2276338064
+29	162829 30643 830 389904 0.003497929587 9.985767939064 1001 1500 1500 1501500 2252250000
+30	193472 30643 831 389905 0.003497929587 9.985767939064 1001 1508 1508 1509508 2276338064
+31	224115 7657 1334 390093 0.005479256213 9.986562076131 250 1508 1508 377000 568516000
+32	231772 7657 1335 390094 0.005479256213 9.986562076131 250 1500 1500 375000 562500000
+33	239429 10155 1335 390094 0.005479256213 9.986562076131 250 0.001262248736 0.005479256213 0.421158877469 0.00076745641498602
+34	249584 7297 1335 390094 0.005479256213 9.986562076131 250 0 249 31125 5177125
+35	256881 7656 1514 389329 0.006282410885 9.978632200703 250 1508 1508 377000 568516000
+36	264537 7656 1515 389330 0.006282410885 9.978632200703 250 1500 1500 375000 562500000
+37	272193 10155 1515 389330 0.006282410885 9.978632200703 250 0.001271124304 0.006282410885 0.417602923603 0.00075572515795542
+38	282348 7296 1515 389330 0.006282410885 9.978632200703 250 0 249 31125 5177125
+39	289644 7718 2034 388960 0.008304788188 9.974582081758 252 1508 1508 380016 573064128
+40	297362 7718 2035 388961 0.008304788188 9.974582081758 252 1500 1500 378000 567000000
+41	305080 10228 2035 388961 0.008304788188 9.974582081758 252 0.001253332228 0.008304788188 0.420958771324 0.00078370065747029
+42	315308 7356 2035 388961 0.008304788188 9.974582081758 252 0 251 31626 5302626
+43	322664 7620 2218 389720 0.009017991337 9.984354266154 249 1508 1508 375492 566241936
+44	330284 7620 2219 389721 0.009017991337 9.984354266154 249 1500 1500 373500 560250000
+45	337904 10102 2219 389721 0.009017991337 9.984354266154 249 0.001235403132 0.009017991337 0.407554080442 0.00075767161341239
+46	348006 7261 2219 389721 0.009017991337 9.984354266154 249 0 248 30876 5115124
+47	355267 2053 154394 390174 3.919753500408 10 62 -197360.41952913 360000 18101718.046473 5744399064022.8
+48	357320 2052 155246 390174 3.942460577458 10 62 -198100.2377854 360000 17890452.428715 5626737918914.9
+49	359372 1992 155527 390174 3.94369671037 10 62 -198140.67139846 426262.83753076 17988122.166132 5692959732322
+50	361364 2020 157897 390174 4.014415220275 10 61 -200481.66455929 360000 17719942.028498 5605230345452.5
+
